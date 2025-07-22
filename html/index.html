@@ -11,6 +11,8 @@
     <!--//谷歌字体 -->
     <!-- 模板 CSS -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/magnific-popup.min.css">
 </head>
 <!--/头部-->
 
@@ -247,11 +249,71 @@
                                 <span class="fa fa-play"></span>
                             </span>
                         </a>
-                        <!-- 弹窗本身，mfp-hide 类用于隐藏弹窗--
+                        <!-- 弹窗本身，mfp-hide 类用于隐藏弹窗-->
+                        <style>
+                            .mfp-hide { display: none !important; }
+                            .mfp-inline-holder .mfp-content {
+                              display: flex !important;
+                              align-items: center !important;
+                              justify-content: center !important;
+                              min-height: 100vh !important;
+                            }
+                            .mfp-bg { z-index: 1042; }
+                            .mfp-wrap { z-index: 1043; }
+                            #small-dialog.zoom-anim-dialog {
+                              position: fixed;
+                              left: 50%;
+                              top: 50%;
+                              transform: translate(-50%, -50%);
+                              z-index: 9999;
+                              width: 90vw;
+                              max-width: 900px;
+                              aspect-ratio: 16/9;
+                              max-height: 500px;
+                              background: #000;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              border-radius: 12px;
+                              box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+                              padding: 0;
+                              margin: 0 auto;
+                            }
+                            #small-dialog .mfp-close {
+                              position: absolute;
+                              right: 10px;
+                              top: 10px;
+                              font-size: 2rem;
+                              z-index: 10;
+                              background: rgba(0,0,0,0.3);
+                              color: #fff;
+                              border: none;
+                              border-radius: 50%;
+                              width: 40px;
+                              height: 40px;
+                              line-height: 36px;
+                              cursor: pointer;
+                            }
+                            #small-dialog iframe {
+                              width: 100%;
+                              height: 100%;
+                              border-radius: 10px;
+                              border: none;
+                              display: block;
+                            }
+                            @media (max-width: 600px) {
+                              #small-dialog.zoom-anim-dialog {
+                                width: 98vw;
+                                max-width: 100vw;
+                                max-height: 56vw;
+                                aspect-ratio: 16/9;
+                              }
+                            }
+                        </style>
                         <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+                            <button title="关闭" type="button" class="mfp-close">&times;</button>
                             <iframe src="https://player.vimeo.com/video/124801644?h=d2296cb1dc" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                         </div>
-						 <!-- 弹窗本身，mfp-hide 类用于隐藏弹窗 -->
                     </div>
                     <!-- //首页视频弹窗-->
                 </div>
@@ -331,7 +393,7 @@
             </div>
             <div class="row gal-page-grids text-center">
                 <div class="col-lg-6 col-6 w3layouts_gallery_grid">
-                    <a href="#gallery">
+                    <a href="assets/images/banner1.jpg" class="image-popup">
                         <div class="w3layouts_team_grid">
                             <img src="assets/images/banner1.jpg" alt=" " class="img-fluid radius-image" />
                             <div class="w3layouts_team_grid_pos">
@@ -344,7 +406,7 @@
                     </a>
                 </div>
                 <div class="col-6 w3layouts_gallery_grid">
-                     <a href="#gallery">
+                     <a href="assets/images/banner2.jpg" class="image-popup">
                         <div class="w3layouts_team_grid">
                             <img src="assets/images/banner2.jpg" alt=" " class="img-fluid radius-image" />
                             <div class="w3layouts_team_grid_pos">
@@ -359,7 +421,7 @@
             </div>
             <div class="row gal-page-grids text-center">
                 <div class="col-4 w3layouts_gallery_grid">
-                   <a href="#gallery">
+                   <a href="assets/images/g1.jpg" class="image-popup">
                         <div class="w3layouts_team_grid">
                             <img src="assets/images/g1.jpg" alt=" " class="img-fluid radius-image" />
                             <div class="w3layouts_team_grid_pos">
@@ -372,7 +434,7 @@
                     </a>
                 </div>
                 <div class="col-4 w3layouts_gallery_grid">
-                     <a href="#gallery">
+                     <a href="assets/images/g2.jpg" class="image-popup">
                         <div class="w3layouts_team_grid">
                             <img src="assets/images/g2.jpg" alt=" " class="img-fluid radius-image" />
                             <div class="w3layouts_team_grid_pos">
@@ -385,7 +447,7 @@
                     </a>
                 </div>
                 <div class="col-4 w3layouts_gallery_grid">
-                     <a href="#gallery">
+                     <a href="assets/images/g3.jpg" class="image-popup">
                         <div class="w3layouts_team_grid">
                             <img src="assets/images/g3.jpg" alt=" " class="img-fluid radius-image" />
                             <div class="w3layouts_team_grid_pos">
@@ -400,7 +462,7 @@
             </div>
             <div class="row gal-page-grids text-center">
                 <div class="col-lg-6 col-6 w3layouts_gallery_grid">
-                     <a href="#gallery">
+                     <a href="assets/images/banner5.jpg" class="image-popup">
                         <div class="w3layouts_team_grid">
                             <img src="assets/images/banner5.jpg" alt=" " class="img-fluid radius-image" />
                             <div class="w3layouts_team_grid_pos">
@@ -413,7 +475,7 @@
                     </a>
                 </div>
                 <div class="col-6 w3layouts_gallery_grid">
-                    <a href="#gallery">
+                    <a href="assets/images/banner4.jpg" class="image-popup">
                         <div class="w3layouts_team_grid">
                             <img src="assets/images/banner4.jpg" alt=" " class="img-fluid radius-image" />
                             <div class="w3layouts_team_grid_pos">
@@ -667,16 +729,11 @@
                         <h3>快速链接</h3>
                         <ul class="footer-gd-links">
                             <li><a href="index.html">首页</a></li>
-                            <li><a href="about.html">关于我们
-                                </a></li>
-                            <li><a href="services.html">服务</a>
-                            </li>
-                            <li><a href="#gallery">画廊</a>
-                            </li>
-                            <li><a href="blog.html">博客</a>
-                            </li>
-                            <li><a href="contact.html">联系我们
-                                    </a></li>
+                            <li><a href="works.html">相关作品</a></li>
+                            <li><a href="services.html">服务项目</a></li>
+                            <li><a href="cases.html">案例展示</a></li>
+                            <li><a href="about.html">关于我们</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 pe-xl-5 pe-lg-4 mt-sm-5 mt-4">
@@ -783,6 +840,32 @@
 
     <!-- //bootstrap -->
     <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Magnific Popup JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js"></script>
+    <script>
+$(document).ready(function() {
+    $('.popup-with-zoom-anim').magnificPopup({
+        type: 'inline',
+        fixedContentPos: false,
+        fixedBgPos: true,
+        overflowY: 'auto',
+        closeBtnInside: true,
+        preloader: false,
+        midClick: true,
+        removalDelay: 300,
+        mainClass: 'my-mfp-zoom-in'
+    });
+    // 新增：画廊图片弹窗
+    $('.image-popup').magnificPopup({
+      type: 'image',
+      closeOnContentClick: true,
+      mainClass: 'mfp-img-mobile',
+      image: {
+        verticalFit: true
+      }
+    });
+});
+</script>
 
 </body>
 
