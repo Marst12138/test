@@ -95,9 +95,9 @@
         <div class="slider-info banner-view banner-top1">
             <div class="container">
                 <div class="banner-info header-hero-19 text-center mx-auto">
-                    <h1 class="w3hny-tag" style="color:#aaa;font-size:26px;line-height:36px;font-weight:400;text-transform:capitalize;">炳乾传媒 BINGQIAN MEDIA</h1>
-                    <h3 class="title-hero-19" style="color:#fff;font-size:90px;line-height:100px;font-weight:700;text-transform:uppercase;margin:10px 0 20px;">全球纪实视觉服务品牌<br>Global Documentary Visual Service Brand</h3>
-                    <p class="w3hny-tag" style="color:#aaa;font-size:26px;line-height:36px;font-weight:400;text-transform:capitalize;">影像驱动品牌影响力 · Visuals Drive Brand Influence</p>
+                    <h1 class="w3hny-tag">炳乾传媒 BINGQIAN MEDIA</h1>
+                    <h3 class="title-hero-19">全球纪实视觉服务品牌<br>Global Documentary Visual Service Brand</h3>
+                    <p class="w3hny-tag">影像驱动品牌影响力 · Visuals Drive Brand Influence</p>
                     <a href="about.html" class="btn btn-style btn-primary mt-4">了解更多</a>
                 </div>
             </div>
@@ -889,6 +889,38 @@
             })
         });
 
+        // 移动端导航栏修复
+        $(document).ready(function() {
+            // 确保导航栏在移动端正确工作
+            $('.navbar-toggler').on('click', function() {
+                var target = $(this).data('bs-target');
+                var $navbarCollapse = $(target);
+                
+                if ($navbarCollapse.hasClass('show')) {
+                    $navbarCollapse.removeClass('show');
+                    $('body').removeClass('noscroll');
+                } else {
+                    $navbarCollapse.addClass('show');
+                    $('body').addClass('noscroll');
+                }
+            });
+
+            // 点击导航链接时关闭移动端菜单
+            $('.navbar-nav .nav-link').on('click', function() {
+                if ($(window).width() <= 992) {
+                    $('.navbar-collapse').removeClass('show');
+                    $('body').removeClass('noscroll');
+                }
+            });
+
+            // 窗口大小改变时重置导航栏状态
+            $(window).on('resize', function() {
+                if ($(window).width() > 992) {
+                    $('.navbar-collapse').removeClass('show');
+                    $('body').removeClass('noscroll');
+                }
+            });
+        });
     </script>
     <!-- //当导航栏激活时禁用页面滚动 -->
 
