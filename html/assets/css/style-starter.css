@@ -351,7 +351,8 @@ select,
 textarea {
     margin: 0;
     font-size: inherit;
-    line-height: inherit font-family: 'Josefin Sans', sans-serif;
+    line-height: inherit;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 button,
@@ -7048,7 +7049,14 @@ fieldset:disabled .btn {
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1030
+    z-index: 1030;
+    background-color: #fff !important;
+    background: #fff !important;
+}
+
+[data-theme="dark"] .fixed-top {
+    background-color: #0a0a0a !important;
+    background: #0a0a0a !important;
 }
 
 .fixed-bottom {
@@ -8380,6 +8388,74 @@ fieldset:disabled .btn {
 
 .invisible {
     visibility: hidden !important
+}
+
+/* 发展历程时间轴样式 - 主题风格统一 */
+.timeline-section {
+  padding: 40px 0;
+  background: var(--bg-light);
+}
+.timeline {
+  position: relative;
+  margin: 40px 0 0 0;
+  padding-left: 40px;
+  border-left: 3px solid var(--primary-color);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+.timeline-img {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: var(--border-radius-full);
+  border: 3px solid #fff;
+  box-shadow: var(--box-shadow);
+  margin-right: 24px;
+  background: var(--card-bg);
+  flex-shrink: 0;
+}
+.timeline-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-full);
+}
+.timeline-content {
+  background: var(--card-bg);
+  padding: 16px 24px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-color-light);
+}
+.timeline-content h3 {
+  margin: 0 0 8px 0;
+  color: var(--primary-color);
+  font-size: 1.2em;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+}
+.timeline-content p {
+  margin: 0;
+  color: var(--font-color);
+  font-size: 1em;
+  font-family: 'Josefin Sans', sans-serif;
+}
+@media (max-width: 600px) {
+  .timeline {
+    padding-left: 16px;
+  }
+  .timeline-img {
+    width: 56px;
+    height: 56px;
+    margin-right: 12px;
+  }
+  .timeline-content {
+    padding: 12px 12px;
+  }
 }
 
 @media (min-width:576px) {
@@ -18402,10 +18478,30 @@ header {
 
 header.nav-fixed {
     padding: 0px;
-    background-color: var(--bg-color);
+    background-color: #fff !important;
+    background: #fff !important;
     height: 85px;
     border-bottom: none;
     box-shadow: 0 3px 6px 0 rgb(0 0 0 / 5%);
+}
+
+/* 深色主题下的nav-fixed样式 */
+[data-theme="dark"] header.nav-fixed {
+    background-color: #0a0a0a !important;
+    background: #0a0a0a !important;
+}
+
+/* 确保所有可能的header背景都被覆盖 */
+header.nav-fixed,
+header.nav-fixed * {
+    background-color: #fff !important;
+    background: #fff !important;
+}
+
+[data-theme="dark"] header.nav-fixed,
+[data-theme="dark"] header.nav-fixed * {
+    background-color: #0a0a0a !important;
+    background: #0a0a0a !important;
 }
 
 .navbar .navbar-brand {
